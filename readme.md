@@ -9,6 +9,12 @@
     - composer global require laravel/installer
 - Laravel installieren
     - laravel new blog
+    
+## Git Clone 
+
+- git clone https://github.com/byte5digital/laravel_training.git
+- cd laravel_training
+- composer install
 
 ## Docker / Docker-Compose
 
