@@ -6,7 +6,7 @@ namespace App\Http\Repositories;
 
 use App\Project;
 
-interface ProjectRepositoryInterface
+interface ProjectRepositoryInterface extends BaseRepositoryInterface
 {
     public function getAllProjects();
     public function getProjectById(int $id);
