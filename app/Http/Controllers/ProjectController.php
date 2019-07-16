@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\ProjectRepositoryInterface;
 use App\Http\Requests\ProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Project;
@@ -9,6 +10,19 @@ use App\User;
 
 class ProjectController extends Controller
 {
+
+    protected $projectRepository;
+
+    /**
+     * ProjectController constructor.
+     * @param $projectRepository
+     */
+    public function __construct(ProjectRepositoryInterface $projectRepository)
+    {
+        $this->projectRepository = $projectRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +30,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-
+        return $this->projectRepository->getAllProjects();
     }
 
     public function indexById(\Request $request, int $id)
