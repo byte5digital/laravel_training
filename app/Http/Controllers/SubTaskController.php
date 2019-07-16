@@ -2,11 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\SubTaskRepositoryDatabase;
+use App\Http\Repositories\SubTaskRepositoryInterface;
 use App\SubTask;
 use Illuminate\Http\Request;
 
 class SubTaskController extends Controller
 {
+
+    protected $subTaskRepository;
+
+    /**
+     * SubTaskController constructor.
+     * @param $subTaskRepository
+     */
+    public function __construct(SubTaskRepositoryInterface $subTaskRepository)
+    {
+        $this->subTaskRepository = $subTaskRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *

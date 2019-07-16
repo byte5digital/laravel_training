@@ -9,6 +9,7 @@ use App\Project;
 interface ProjectRepositoryInterface extends BaseRepositoryInterface
 {
     public function getAllProjects();
+    public function getAllProjectFromLoggedInUser();
     public function getProjectById(int $id);
     public function updateProjectById(int $id, Project $project);
     public function createProject(Project $project);

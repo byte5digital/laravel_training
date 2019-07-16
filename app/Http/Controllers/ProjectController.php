@@ -6,7 +6,6 @@ use App\Http\Repositories\ProjectRepositoryInterface;
 use App\Http\Requests\ProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Project;
-use App\User;
 
 class ProjectController extends Controller
 {
@@ -30,12 +29,14 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return $this->projectRepository->getAllProjects();
+        $projects = $this->projectRepository->getAllProjects();
+        return view('projects.index', ['projects' => $projects]);
     }
 
     public function indexById(\Request $request, int $id)
     {
-
+        $currentProject = $this->projectRepository->getProjectById($id);
+        return view('projects.detail', ['project' => $currentProject]);
     }
 
 
@@ -104,6 +105,7 @@ class ProjectController extends Controller
      */
     public function destroy(\Request $request, int $projectId)
     {
-
+        $this->projectRepository->deleteProject($projectId);
+        return redirect(route('project.index'));
     }
 }

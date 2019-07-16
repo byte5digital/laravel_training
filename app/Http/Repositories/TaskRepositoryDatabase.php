@@ -12,11 +12,12 @@ class TaskRepositoryDatabase implements TaskRepositoryInterface
 {
 
     /**
+     * @param string $tablename
      * @return Task[]|Collection
      */
-    public function getAllTasks()
+    public function getAllTasks(string $tablename = "tasks")
     {
-       return Task::all();
+       return Task::from($tablename)->get();
     }
 
     public function getTaskById(int $id)
@@ -63,5 +64,10 @@ class TaskRepositoryDatabase implements TaskRepositoryInterface
             }
         }
         return false;
+    }
+
+    public function getOrNew(int $id)
+    {
+        return Task::firstOrNew(['id' => $id]);
     }
 }

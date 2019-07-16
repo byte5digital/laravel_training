@@ -8,7 +8,9 @@ use App\Task;
 
 interface TaskRepositoryInterface
 {
-    public function getAllTasks();
+    public function getOrNew(int $id);
+
+    public function getAllTasks(string $tablename = "tasks");
 
     public function getTaskById(int $id);
 

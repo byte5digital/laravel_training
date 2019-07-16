@@ -9,6 +9,7 @@ use App\Http\Repositories\SubTaskRepositoryDatabase;
 use App\Http\Repositories\SubTaskRepositoryInterface;
 use App\Http\Repositories\TaskRepositoryDatabase;
 use App\Http\Repositories\TaskRepositoryInterface;
+use App\Http\Repositories\TaskRepositoryRestFul;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 
 use App\Project;
+use Auth;
 
 class ProjectRepositoryDatabase implements ProjectRepositoryInterface
 {
@@ -52,5 +53,10 @@ class ProjectRepositoryDatabase implements ProjectRepositoryInterface
             }
         }
         return false;
+    }
+
+    public function getAllProjectFromLoggedInUser()
+    {
+        return Auth::user()->projects;
     }
 }
