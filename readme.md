@@ -26,6 +26,11 @@
 
 ## .env File
 
+## Authentication
+
+- php artisan make:auth
+
+
 ## Packages
 
 #### IDE Helper
