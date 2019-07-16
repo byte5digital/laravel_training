@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/projects', 'ProjectController@index')->name('project.index');
+// Route::middleware(['test'])->get('/projects', 'ProjectController@index')->name('project.index');
