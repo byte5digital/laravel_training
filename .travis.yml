@@ -3,6 +3,10 @@ language: generic
 stages:
   - name: Test
 
+branches:
+  only:
+    - /*./
+
 matrix:
   fast_finish: true
   include:
