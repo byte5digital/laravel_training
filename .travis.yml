@@ -16,6 +16,7 @@ matrix:
       install:
         composer install
       script:
+        - composer run-script appkey
         - composer run-script test
       cache:
         directories:
