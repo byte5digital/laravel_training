@@ -3,15 +3,21 @@ language: generic
 stages:
   - name: Test
 
+branches:
+  only:
+    - /.*/
+
 matrix:
   fast_finish: true
   include:
     - stage: Test
       language: php
-      php: "7.1"
+      php: "7.2"
       install:
         composer install
       script:
+        - composer run-script post-root-package-install
+        - composer run-script appkey
         - composer run-script test
       cache:
         directories:
