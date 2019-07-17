@@ -1,0 +1,19 @@
+language: generic
+
+stages:
+  - name: Test
+
+matrix:
+  fast_finish: true
+  include:
+    - stage: Test
+      language: php
+      php: "7.1"
+      install:
+        composer install
+      script:
+        - composer run-script test
+      cache:
+        directories:
+          - $HOME/.composer/cache/files
+
