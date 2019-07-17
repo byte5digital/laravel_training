@@ -39,6 +39,11 @@ class ProjectController extends Controller
         return view('projects.detail', ['project' => $currentProject]);
     }
 
+    public function indexApi(){
+        $projects = $this->projectRepository->getAllProjects();
+        return ProjectResource::collection($projects);
+    }
+
 
     /**
      * Show the form for creating a new resource.

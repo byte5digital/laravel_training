@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <example-component></example-component>
+                    <projects-component v-bind:projects="{{json_encode($projects)}}"></projects-component>
                 </div>
             </div>
         </div>

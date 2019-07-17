@@ -16,7 +16,8 @@ class UserResource extends JsonResource
     {
         /* @var \App\User $this */
         return [
-            'username' => strtoupper($this->name),
+            'id' => $this->id,
+            'name' => strtoupper($this->name),
             'email' => strtolower($this->email)
         ];
     }

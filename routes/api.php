@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/projects', 'ProjectController@indexApi')->name('api.projects.index');
+Route::post('/user', 'UserController@updateUser')->name('api.user.update');
