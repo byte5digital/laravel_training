@@ -15,6 +15,7 @@
 - git clone https://github.com/byte5digital/laravel_training.git
 - cd laravel_training
 - composer install
+- npm install
 
 ## Docker / Docker-Compose
 
@@ -26,12 +27,47 @@
 
 ## .env File
 
+- Primärer Datenbankzugriff 
+- sekundärer Datenbankzugriff
+    - Anbindung in config/database.php
+
+## API Gestaltung
+
+- Laravel Resources zur Steuerung der JSON Ausgabe / (app/Http/Resources)
+- Transformation der Entitäten
+
+## Repository Pattern (app/Http/Repositories/)
+
+- Abstraktion des Datenzugriffs
+    - Erstellung Interface (xxxInterface)  
+    - Anbindung an Eloquent (xxxDatabase) 
+    - Anbindung an Rest Schnittstelle mit Guzzle (xxxRestFul)
+- "Anmeldung" der Implementierung
+    - app/Http/Providers/AppServiceProvider.php
+    ```php
+     public function register()
+        {
+            $this->app->bind(ProjectRepositoryInterface::class, ProjectRepositoryDatabase::class);
+            $this->app->bind(TaskRepositoryInterface::class, TaskRepositoryDatabase::class);
+            $this->app->bind(SubTaskRepositoryInterface::class, SubTaskRepositoryDatabase::class);
+        }
+    ```
+
 ## Authentication
 
 - php artisan make:auth
 
+## Eloquent
+
+- Relations
+    - hasMany / belongsTo
+    - hasOne / belongsTo
 
 ## Packages
+
+#### VueJs
+
+- Implementierung in App.js
 
 #### IDE Helper
 

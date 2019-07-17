@@ -29,7 +29,7 @@ class TaskRepositoryRestFul implements TaskRepositoryInterface
     public function getAllTasks(string $tablename = "tasks")
     {
         try {
-            
+
             $response = $this->guzzleHttp->get('https://jsonplaceholder.typicode.com/todos');
 
             if ($response->getStatusCode() === 200){
