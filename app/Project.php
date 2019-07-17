@@ -27,7 +27,6 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
-    public $connection = 'mysql';
 
     protected $fillable = ['name'];
 
