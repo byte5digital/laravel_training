@@ -62,7 +62,7 @@
             "@php artisan key:generate --ansi"
         ],
         "appkey":  [
-            "php artisan key:generate"
+            "@php artisan key:generate"
         ],
         "test": [
             "phpunit --configuration phpunit.xml"
